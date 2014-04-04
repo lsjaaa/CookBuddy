@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class menuAdapter extends BaseExpandableListAdapter {
 	private Context context;
-	String[] parentList = {"Item 1", "Item 2", "Item 3", "Item 4"};
+	String[] parentList = {"Under 5 Minutes", "Under 10 Minutes", "Under 30 Minutes", "Under 60 Minutes"};
 	String[][] childList = {
 			{
 				"Recipe 1"
@@ -51,6 +51,8 @@ public class menuAdapter extends BaseExpandableListAdapter {
 		
 		TextView tv = new TextView(context);
 		tv.setText(childList[groupPosition][childPosition]);
+		tv.setPadding(70, 10, 10, 10);
+		tv.setTextSize(22);
 		return tv;
 	}
 
@@ -85,6 +87,8 @@ public class menuAdapter extends BaseExpandableListAdapter {
 		
 		TextView tv = new TextView(context);
 		tv.setText(parentList[groupPosition]);
+		tv.setPadding(50, 10, 10, 10);
+		tv.setTextSize(28);
 		return tv;
 	}
 
