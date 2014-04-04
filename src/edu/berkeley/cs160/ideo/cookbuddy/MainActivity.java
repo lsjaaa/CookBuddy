@@ -1,11 +1,15 @@
 package edu.berkeley.cs160.ideo.cookbuddy;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.Window;
+import android.widget.ExpandableListView;
 
 public class MainActivity extends Activity {
+	
+	ExpandableListView menu;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +19,9 @@ public class MainActivity extends Activity {
 		
 		// And after removing the title bar, set content view
 		setContentView(R.layout.activity_main);
+		
+		menu = (ExpandableListView) findViewById(R.id.menu);
+		menu.setAdapter(new menuAdapter(this));
 	}
 
 	@Override
