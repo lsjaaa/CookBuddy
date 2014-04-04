@@ -22,6 +22,7 @@ public class MainActivity extends Activity {
 		
 		menu = (ExpandableListView) findViewById(R.id.menu);
 		menu.setAdapter(new menuAdapter(this));
+		menu.expandGroup(0);
 	}
 
 	@Override
